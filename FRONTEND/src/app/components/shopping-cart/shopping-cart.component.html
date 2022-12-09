@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let product of products$ | async">
+    {{ product.name }} : {{ product.price | currency }}
+    <button (click)="onClickRemove(product)">Remove from cart</button>
+  </li>
+</ul>

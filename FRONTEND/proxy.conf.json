@@ -1,0 +1,6 @@
+{
+	"/api": {
+		"target": "https://deploy-tp05.onrender.com",
+		"secure": false
+	}
+}

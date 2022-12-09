@@ -1,0 +1,14 @@
+<h1>Catalog</h1>
+<app-search-bar
+  property="name"
+  [list]="catalog"
+  (filter)="updateProducts($event)"
+  (resetList)="getCatalog()"
+></app-search-bar>
+<ul>
+  <li *ngFor="let product of catalog">
+    {{ product.name }}
+    <button routerLink="{{ product.id }}">I</button>
+    <button (click)="onClickAdd(product)">Add to cart</button>
+  </li>
+</ul>

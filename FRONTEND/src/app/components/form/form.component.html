@@ -1,0 +1,155 @@
+<h1>Client Form</h1>
+<form autocomplete="on" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name: </label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Name"
+      formControlName="lastName"
+      appLetterOnly
+    />
+  </div>
+  <div>
+    <label for="firstname">Firstname: </label>
+    <input
+      type="text"
+      name="firstname"
+      id="firstname"
+      placeholder="Firstname"
+      formControlName="firstname"
+      appLetterOnly
+    />
+  </div>
+  <div>
+    <label for="address">Address: </label>
+    <input
+      type="text"
+      name="address"
+      id="address"
+      placeholder="Address"
+      formControlName="address"
+      required
+    />
+  </div>
+  <div>
+    <label for="zipCode">Zip Code: </label>
+    <input
+      id="zip"
+      name="zip"
+      type="text"
+      placeholder="Zip Code"
+      formControlName="zip"
+      appNumberOnly
+      length="5"
+    />
+  </div>
+  <div>
+    <label for="city">City: </label>
+    <input
+      type="text"
+      name="city"
+      id="city"
+      placeholder="City"
+      formControlName="city"
+      appLetterOnly
+    />
+  </div>
+  <div>
+    <label for="country">Country: </label>
+    <input
+      type="text"
+      name="country"
+      id="country"
+      placeholder="Country"
+      formControlName="country"
+      appLetterOnly
+    />
+  </div>
+  <div>
+    <label for="phone">Phone: </label>
+    <input
+      type="tel"
+      name="phone"
+      id="phone"
+      placeholder="Phone"
+      formControlName="phone"
+      appNumberOnly
+      length="10"
+    />
+  </div>
+  <div>
+    <label for="email">Email: </label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Email"
+      formControlName="email"
+    />
+  </div>
+  <div>
+    <label for="gender">Gender: </label>
+    <div>
+      <input
+        type="radio"
+        name="gender"
+        id="male"
+        formControlName="gender"
+        value="Male"
+      />
+      <label for="male">Male</label>
+    </div>
+    <div>
+      <input
+        type="radio"
+        name="gender"
+        id="female"
+        formControlName="gender"
+        value="Female"
+      />
+      <label for="female">Female</label>
+    </div>
+    <div>
+      <input
+        type="radio"
+        name="gender"
+        id="other"
+        formControlName="gender"
+        value="Other"
+      />
+      <label for="other">Other</label>
+    </div>
+  </div>
+  <div>
+    <label for="login">Login: </label>
+    <input type="text" name="login" id="login" placeholder="Login"
+    formControlName="login" appLetterOnly= />
+  </div>
+  <div>
+    <label for="password">Password: </label>
+    <input
+      type="password"
+      name="password"
+      id="password"
+      placeholder="Password"
+      formControlName="password"
+    />
+  </div>
+  <div>
+    <label for="confirm-password">Confirm Password: </label>
+    <input
+      type="password"
+      name="confirm-password"
+      id="confirm-password"
+      placeholder="Confirm Password"
+      formControlName="confirmPassword"
+    />
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<app-client-info
+  *ngIf="clientVerified.firstname"
+  [client]="clientVerified"
+></app-client-info>
